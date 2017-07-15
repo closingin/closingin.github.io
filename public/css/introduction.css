@@ -1,0 +1,63 @@
+/*
+** Written by closingin.
+*/
+
+#portfolio-introduction {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    box-sizing: border-box;
+    font-size: 18px;
+    background-image: url('../images/me.jpg');
+    background-size: cover;
+}
+
+#portfolio-introduction-inner {
+    height: 100%;
+    padding: 50px 80px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#portfolio-introduction #description {
+    position: absolute;
+    right: 80px;
+    bottom: 80px;
+    left: 80px;
+}
+
+#portfolio-introduction #description h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+    color: white;
+    font-family: Roboto;
+}
+
+#portfolio-introduction #description p {
+    color: rgba(255, 255, 255, .6);
+}
+
+#portfolio-introduction #links {
+    position: absolute;
+    right: 80px;
+    bottom: 50px;
+    left: 80px;
+}
+
+#portfolio-introduction #links p {
+    font-size: .7em;
+    color: rgba(255, 255, 255, .6);
+}
+
+#portfolio-introduction #links p a {
+    color: rgba(255, 255, 255, .6);
+    text-decoration: none;
+    transition: color .4s;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#portfolio-introduction #links p a:hover {
+    color: #FFF;
+}

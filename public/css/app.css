@@ -1,0 +1,13 @@
+/*
+** Written by closingin.
+*/
+
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: "Open Sans";
+}
+
+a {
+    color: white;
+}
