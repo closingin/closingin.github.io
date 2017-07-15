@@ -61,3 +61,10 @@
 #portfolio-introduction #links p a:hover {
     color: #FFF;
 }
+
+#portfolio-introduction #description,
+#portfolio-introduction #links {
+    opacity: 0;
+    transform: translateY(25%);
+    transition: opacity 1s, transform 1s;
+}
