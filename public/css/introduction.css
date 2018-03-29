@@ -3,12 +3,11 @@
 */
 
 #portfolio-introduction {
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 30%;
-    box-sizing: border-box;
+    width: 100%;
     font-size: 18px;
     background-image: url('../images/me.jpg');
     background-size: cover;
@@ -16,7 +15,8 @@
 
 #portfolio-introduction-inner {
     height: 100%;
-    padding: 50px 80px;
+    box-sizing: border-box;
+    overflow-y: auto;
     background-color: rgba(0, 0, 0, .5);
 }
 
@@ -67,4 +67,43 @@
     opacity: 0;
     transform: translateY(25%);
     transition: opacity 1s, transform 1s;
+}
+
+@media screen and (min-width: 768px) {
+    #portfolio-introduction {
+        position: fixed;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #portfolio-introduction {
+        width: 30%;
+    }
+
+    #portfolio-introduction #description {
+        right: 40px;
+        bottom: 60px;
+        left: 40px;
+    }
+
+    #portfolio-introduction #links {
+        right: 40px;
+        bottom: 25px;
+        left: 40px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #portfolio-introduction #description {
+        right: 80px;
+        bottom: 80px;
+        left: 80px;
+    }
+
+    #portfolio-introduction #links {
+        right: 80px;
+        bottom: 50px;
+        left: 80px;
+    }
 }
