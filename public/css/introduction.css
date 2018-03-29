@@ -3,28 +3,29 @@
 */
 
 #portfolio-introduction {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     font-size: 18px;
     background-image: url('../images/me.jpg');
     background-size: cover;
 }
 
 #portfolio-introduction-inner {
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    box-sizing: border-box;
+    padding: 50px 80px 0;
     overflow-y: auto;
+    box-sizing: border-box;
     background-color: rgba(0, 0, 0, .5);
 }
 
+#portfolio-introduction-inner::after {
+    content: '';
+    display: block;
+    padding-bottom: 50px;
+}
+
 #portfolio-introduction #description {
-    position: absolute;
-    right: 80px;
-    bottom: 80px;
-    left: 80px;
+    margin-top: auto;
 }
 
 #portfolio-introduction #description h1 {
@@ -36,13 +37,6 @@
 
 #portfolio-introduction #description p {
     color: rgba(255, 255, 255, .6);
-}
-
-#portfolio-introduction #links {
-    position: absolute;
-    right: 80px;
-    bottom: 50px;
-    left: 80px;
 }
 
 #portfolio-introduction #links p {
@@ -72,6 +66,8 @@
 @media screen and (min-width: 768px) {
     #portfolio-introduction {
         position: fixed;
+        top: 0;
+        bottom: 0;
         width: 50%;
     }
 }
@@ -81,29 +77,21 @@
         width: 30%;
     }
 
-    #portfolio-introduction #description {
-        right: 40px;
-        bottom: 60px;
-        left: 40px;
+    #portfolio-introduction-inner {
+        padding: 25px 40px 0;
     }
 
-    #portfolio-introduction #links {
-        right: 40px;
-        bottom: 25px;
-        left: 40px;
+    #portfolio-introduction-inner::after {
+        padding-bottom: 25px;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    #portfolio-introduction #description {
-        right: 80px;
-        bottom: 80px;
-        left: 80px;
+    #portfolio-introduction-inner {
+        padding: 50px 80px 0;
     }
 
-    #portfolio-introduction #links {
-        right: 80px;
-        bottom: 50px;
-        left: 80px;
+    #portfolio-introduction-inner::after {
+        padding-bottom: 50px;
     }
 }
