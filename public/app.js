@@ -22,4 +22,17 @@
     var useful = document.querySelector('#skills > div');
     useful.style.opacity   = 1;
     useful.style.transform = 'translateY(-50%)';
+
+    var menuToggler = document.querySelector('header .menu-toggle');
+    var menu = document.querySelector('header nav');
+
+    menuToggler.addEventListener('click', function(e) {
+        if (menu.classList.contains('active')) {
+            menu.classList.remove('active');
+            menuToggler.classList.remove('active');
+        } else {
+            menu.classList.add('active');
+            menuToggler.classList.add('active');
+        }
+    });
 })();

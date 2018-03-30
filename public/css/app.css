@@ -11,3 +11,149 @@ html, body {
 a {
     color: #454545;
 }
+
+header .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 999;
+    top: 80px;
+    left: 80px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    transition: top .4s, right .4s, left .4s;
+}
+
+header .menu-toggle:hover .fst,
+header .menu-toggle:hover .trd {
+    width: 100%;
+}
+
+header .menu-toggle:hover .snd {
+    width: 70%;
+}
+
+header .menu-toggle.active {
+    position: fixed;
+    top: 40px;
+    left: calc(70% - 70px);
+    width: 30px;
+}
+
+header .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: width .4s, background-color .4s, transform .4s, opacity .4s;
+}
+
+header .menu-toggle .fst {
+    width: 80%;
+    transform-origin: top left;
+}
+
+header .menu-toggle .trd {
+    width: 60%;
+    transform-origin: bottom left;
+}
+
+header .menu-toggle.active:hover span {
+    background-color: #fff;
+}
+
+header .menu-toggle.active span {
+    opacity: 0;
+    background-color: #383221;
+}
+
+header .menu-toggle.active .fst {
+    width: 40px;
+    opacity: 1;
+    transform: rotate(45deg);
+}
+
+header .menu-toggle.active .trd {
+    width: 40px;
+    opacity: 1;
+    transform: rotate(-45deg);
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: -70%;
+    width: 70%;
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 110px;
+    background-color: #87cef5;
+    transition: left .4s;
+}
+
+header nav.active {
+    left: 0;
+}
+
+header nav a {
+    padding: 20px 40px;
+    font-size: 1.3em;
+    color: rgba(0, 0, 0, .7);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+@media screen and (min-width: 768px) {
+    header .menu-toggle {
+        position: fixed;
+        top: 80px;
+        left: 80px;
+        right: auto;
+    }
+
+    header .menu-toggle span {
+        background-color: #FFF;
+    }
+
+    header .menu-toggle.active {
+        left: calc(50% - 70px);
+    }
+
+    header nav {
+        left: -50%;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header .menu-toggle {
+        top: 40px;
+        left: 40px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    header .menu-toggle {
+        top: 80px;
+        left: 80px;
+    }
+
+    header .menu-toggle.active {
+        left: calc(30% - 70px);
+    }
+
+    header nav {
+        left: -30%;
+        width: 30%;
+    }
+}
