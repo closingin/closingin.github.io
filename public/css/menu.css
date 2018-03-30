@@ -19,13 +19,12 @@ header .menu-toggle {
 header .menu-toggle.active {
     position: fixed;
     top: 50px;
-    left: calc(70% - 70px);
+    left: calc(100% - 70px);
     width: 30px;
 }
 
 header .menu-toggle.active span {
     opacity: 0;
-    background-color: rgba(0, 0, 0, .7);
 }
 
 header .menu-toggle.active span.fst {
@@ -70,15 +69,15 @@ header .menu-toggle span.trd {
 header nav {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     position: fixed;
     z-index: 998;
     top: 0;
-    left: -70%;
-    width: 70%;
+    left: -100%;
+    width: 100%;
     height: 100%;
     overflow-y: auto;
-    padding-top: 20px;
-    background-color: #52beb2;
+    background-color: rgba(0, 0, 0, .9);
     transition: left .4s;
 }
 
@@ -88,29 +87,16 @@ header nav.active {
 }
 
 header nav a {
-    display: flex;
-    align-items: center;
+    text-align: center;
     padding: 20px 40px;
-    color: rgba(0, 0, 0, .7);
+    color: #FFF;
+    font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
 }
 
 header nav a:hover {
     color: #fff;
-    background-color: rgba(0, 0, 0, .1);
-}
-
-header nav a span {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    border-radius: 50%;
-    color: #FFF;
     background-color: rgba(0, 0, 0, .1);
 }
 
@@ -133,10 +119,28 @@ header nav a span {
     header nav {
         left: -50%;
         width: 50%;
+        background-color: #52beb2;
     }
 
     header nav a {
+        display: flex;
+        align-items: center;
+        color: rgba(0, 0, 0, .7);
         font-size: 1.3em;
+        font-weight: normal;
+    }
+
+    header nav a span {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 50%;
+        color: #FFF;
+        background-color: rgba(0, 0, 0, .1);
     }
 }
 
