@@ -1,0 +1,75 @@
+/*
+** Written by closingin.
+*/
+
+#portfolio-content #contact .contact-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#portfolio-content #contact .contact-content form {
+    margin-bottom: 40px;
+}
+
+#portfolio-content #contact .contact-content input,
+#portfolio-content #contact .contact-content textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #c2dad7;
+    color: #6d6d6d;
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+#portfolio-content #contact .contact-content input:disabled,
+#portfolio-content #contact .contact-content textarea:disabled {
+    cursor: not-allowed;
+}
+
+#portfolio-content #contact .contact-content textarea {
+    min-height: 200px;
+}
+
+#portfolio-content #contact .contact-content input[type="submit"] {
+    width: auto;
+    margin-bottom: 0;
+    padding: 10px;
+    border: 1px solid #109082;
+    color: #109082;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+    border-radius: 3px;
+    margin-left: auto;
+}
+
+#portfolio-content #contact .contact-content p {
+    padding: 20px;
+    background-color: #c2dad7;
+    color: #607c79;
+}
+
+@media screen and (min-width: 1280px) {
+    #portfolio-content #contact .contact-content {
+        flex-direction: row;
+    }
+
+    #portfolio-content #contact .contact-content form,
+    #portfolio-content #contact .contact-content div {
+        width: 50%;
+    }
+
+    #portfolio-content #contact .contact-content form {
+        margin-bottom: 0;
+    }
+
+    #portfolio-content #contact .contact-content div {
+        padding-left: 40px;
+    }
+}
