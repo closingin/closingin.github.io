@@ -11,17 +11,17 @@
     links.style.opacity = 1;
     links.style.transform = 'translateY(0)';
 
-    var projects = document.querySelector('#projects > div');
-    projects.style.opacity   = 1;
-    projects.style.transform = 'translateY(-50%)';
-
-    var useful = document.querySelector('#useful > div');
-    useful.style.opacity   = 1;
-    useful.style.transform = 'translateY(-50%)';
-
-    var useful = document.querySelector('#skills > div');
-    useful.style.opacity   = 1;
-    useful.style.transform = 'translateY(-50%)';
+    // var projects = document.querySelector('#projects > div');
+    // projects.style.opacity   = 1;
+    // projects.style.transform = 'translateY(-50%)';
+    //
+    // var useful = document.querySelector('#useful > div');
+    // useful.style.opacity   = 1;
+    // useful.style.transform = 'translateY(-50%)';
+    //
+    // var useful = document.querySelector('#skills > div');
+    // useful.style.opacity   = 1;
+    // useful.style.transform = 'translateY(-50%)';
 
     var menuToggler = document.querySelector('header .menu-toggle');
     var menu = document.querySelector('header nav');

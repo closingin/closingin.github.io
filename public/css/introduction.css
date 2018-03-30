@@ -3,22 +3,17 @@
 */
 
 #portfolio-introduction {
-    font-size: 18px;
-    background-image: url('../images/me.jpg');
-    background-size: cover;
-}
-
-#portfolio-introduction-inner {
     display: flex;
     flex-direction: column;
-    height: 100%;
     padding: 140px 80px 0;
     overflow-y: auto;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, .5);
+    font-size: 18px;
+    background-size: cover;
+    background-color: #109082;
 }
 
-#portfolio-introduction-inner::after {
+#portfolio-introduction::after {
     content: '';
     display: block;
     padding-bottom: 50px;
@@ -75,23 +70,20 @@
 @media screen and (min-width: 1024px) {
     #portfolio-introduction {
         width: 30%;
-    }
-
-    #portfolio-introduction-inner {
         padding: 90px 40px 0;
     }
 
-    #portfolio-introduction-inner::after {
+    #portfolio-introduction::after {
         padding-bottom: 25px;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    #portfolio-introduction-inner {
+    #portfolio-introduction {
         padding: 140px 80px 0;
     }
 
-    #portfolio-introduction-inner::after {
+    #portfolio-introduction::after {
         padding-bottom: 50px;
     }
 }
