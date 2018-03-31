@@ -15,31 +15,28 @@ function unblur(elements) {
 }
 
 (function() {
-    var description = document.querySelector('#description');
-    description.style.opacity = 1;
-    description.style.transform = 'translateY(0)';
+    var sidebar  = [
+        document.querySelector('#description'),
+        document.querySelector('#links')
+    ];
+    var articles = document.querySelectorAll('article > div');
 
-    var links = document.querySelector('#links');
-    links.style.opacity = 1;
-    links.style.transform = 'translateY(0)';
+    for (var i = 0; i < sidebar.length; i++) {
+        sidebar[i].style.opacity   = 1;
+        sidebar[i].style.transform = 'translateY(0)';
+    }
 
-    // var projects = document.querySelector('#projects > div');
-    // projects.style.opacity   = 1;
-    // projects.style.transform = 'translateY(-50%)';
-
-    var education = document.querySelector('#education > div');
-    education.style.opacity   = 1;
-    education.style.transform = 'translateY(0)';
-
-    var contact = document.querySelector('#contact > div');
-    contact.style.opacity   = 1;
-    contact.style.transform = 'translateY(0)';
+    for (var i = 0; i < articles.length; i++) {
+        articles[i].style.opacity   = 1;
+        articles[i].style.transform = 'translateY(0)';
+    }
 
     var menu        = document.querySelector('header nav');
     var menuItems   = document.querySelectorAll('header nav a');
     var menuToggler = document.querySelector('header .menu-toggle');
 
-    var sections = document.querySelectorAll('section');
+    var aside = document.querySelector('aside');
+    var main  = document.querySelector('main');
 
     for (var i = 0; i < menuItems.length; i++) {
         menuItems[i].addEventListener('click', function(e) {
@@ -48,7 +45,7 @@ function unblur(elements) {
             menu.classList.remove('active');
             menuToggler.classList.remove('active');
 
-            unblur(sections);
+            unblur([aside, main]);
 
             document.querySelector(e.target.hash).scrollIntoView({
                 behavior: 'smooth'
@@ -60,11 +57,11 @@ function unblur(elements) {
         if (menu.classList.contains('active')) {
             menu.classList.remove('active');
             menuToggler.classList.remove('active');
-            unblur(sections);
+            unblur([aside, main]);
         } else {
             menu.classList.add('active');
             menuToggler.classList.add('active');
-            blur(sections);
+            blur([aside, main]);
         }
     });
 })();

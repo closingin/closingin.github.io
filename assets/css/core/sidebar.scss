@@ -1,0 +1,110 @@
+
+aside {
+    display: flex;
+    flex-direction: column;
+    padding: 140px 40px 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+    font-size: 18px;
+    background-size: cover;
+    background-color: $primary-color;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -200px;
+        left: -200px;
+        width: 400px;
+        height: 200%;
+        transform: rotate(20deg);
+        transform-origin: top left;
+        background-color: lighten($primary-color, 2%);
+        border-right: 30px solid lighten($primary-color, 1%);
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        padding-bottom: 50px;
+    }
+
+    #description,
+    #links {
+        opacity: 0;
+        transform: translateY(15%);
+        transition: opacity 1s, transform 1s;
+    }
+
+    #description {
+        margin-top: auto;
+
+        h1 {
+            color: white;
+            text-transform: uppercase;
+            font-size: 2em;
+            font-family: 'Varela Round';
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, .6);
+        }
+    }
+
+    #links {
+        p {
+            font-size: .7em;
+            color: rgba(255, 255, 255, .6);
+        }
+
+        p a {
+            color: rgba(255, 255, 255, .6);
+            text-decoration: none;
+            transition: color .4s;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        p a:hover {
+            color: #FFF;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    aside {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        padding-left: 80px;
+        padding-right: 80px;
+
+        &::before {
+            position: fixed;
+            left: -150px;
+            transform: rotate(15deg);
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    aside {
+        width: 30%;
+        padding: 90px 40px 0;
+
+        &::after {
+            padding-bottom: 25px;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    aside {
+        padding: 140px 80px 0;
+
+        &::after {
+            padding-bottom: 50px;
+        }
+    }
+}

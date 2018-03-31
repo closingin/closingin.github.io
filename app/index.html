@@ -1,48 +1,12 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-
-    <link media="screen" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Varela+Round" />
-    <link media="screen" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-    <link media="screen" rel="stylesheet" href="/css/app.css" />
-
-    <title>Rémi Weislinger &#8226; Web Developer & Designer</title>
-</head>
-
+    @@include('core/head.html', {
+        "title": "Rémi Weislinger &#8226; Web Developer & Designer"
+    })
 
     <body>
-        <header>
-    <div class="menu-toggle">
-        <span class="fst"></span>
-        <span class="snd"></span>
-        <span class="trd"></span>
-    </div>
-    <nav>
-        <a href="#projects"><span>P</span>rojects</a>
-        <a href="#skills"><span>S</span>kills</a>
-        <a href="#education"><span>E</span>ducation</a>
-        <a href="#contact"><span>C</span>ontact</a>
-    </nav>
-</header>
-
-        <aside>
-    <div id="description">
-        <h1>Hello!<br>My<br />name's<br />closingin.<br />I swear.</h1>
-        <p>Hell no, my name's Rémi, but who cares? I'm mainly a web developer, but I'm also interested in whatever is related to programming.</p>
-    </div>
-    
-    <div id="links">
-        <p>
-            <a href="https://twitter.com/closinginme"><i class="fa fa-twitter"></i> Twitter</a>
-            <a href="https://github.com/closingin"><i class="fa fa-github"></i> GitHub</a>
-            <a href="mailto:closingin@pm.me"><i class="fa fa-envelope-o"></i> E-mail</a>
-        </p>
-    </div>
-</aside>
-
+        @@include('core/menu.html')
+        @@include('core/sidebar.html')
 
         <main>
             <div class="article-container single">

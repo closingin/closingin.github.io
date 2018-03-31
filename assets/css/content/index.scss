@@ -1,0 +1,62 @@
+
+main {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+main .article-container {
+    display: flex;
+    flex-direction: column;
+}
+
+main .article-container article {
+    width: 100%;
+    min-height: 500px;
+    box-sizing: border-box;
+    color: #454545;
+    border: 0 solid #FFF;
+
+    &#projects  { background-color: #F8F8F8; }
+    &#education { background-color: #E9E9E9; }
+    &#skills    { background-color: #E4E4E4; }
+    &#contact   { background-color: #F2F2F2; }
+
+    &:hover h3::after {
+        width: calc(100% - 3px);
+    }
+
+    > div {
+        padding: 40px;
+        opacity: 0;
+        transition: opacity 1s, transform 1s;
+        transform: translateY(-10%);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        margin-left: 50%;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        margin-left: 30%;
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    main .article-container {
+        flex-direction: row;
+    }
+
+    main .article-container.single article {
+        h3,
+        h4 {
+            max-width: calc(50% - 20px);
+        }
+    }
+}
