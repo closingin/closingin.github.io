@@ -15,7 +15,7 @@ gulp.task('serve', ['build:dist'], () => {
     $.connect.server({
         name: 'Development',
         port: 3000,
-        root: ['./', paths.dest],
+        root: './',
         livereload: true
     });
 
