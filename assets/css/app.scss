@@ -62,11 +62,6 @@ h4 {
     font-size: .8em;
 }
 
-aside.faded,
-main.faded {
-    filter: blur(3px);
-}
-
 @media screen and (min-width: 768px) {
     aside {
         transition: filter .5s;
@@ -74,9 +69,5 @@ main.faded {
         &.faded {
             filter: blur(15px);
         }
-    }
-
-    main.faded {
-        filter: none;
     }
 }

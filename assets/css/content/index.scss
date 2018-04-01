@@ -31,6 +31,10 @@ main .article-container article {
         opacity: 0;
         transition: opacity 1s, transform 1s;
         transform: translateY(-10%);
+
+        .content {
+            padding-top: 30px;
+        }
     }
 }
 

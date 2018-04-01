@@ -10,43 +10,16 @@
 
         <main>
             <div class="article-container single">
-                <article id="projects">
-                    <div>
-                        <h3>Projects</h3>
-                    </div>
-                </article>
+                @@include('sections/projects.html')
             </div>
 
             <div class="article-container">
-                <article id="education">
-                    <div>
-                        <h3>Education</h3>
-                    </div>
-                </article>
-                <article id="skills">
-                    <div>
-                        <h3>Skills</h3>
-                    </div>
-                </article>
+                @@include('sections/education.html')
+                @@include('sections/skills.html')
             </div>
 
             <div class="article-container single">
-                <article id="contact">
-                    <div>
-                        <h3>Contact me</h3>
-                        <h4>I'm always available for <u>side-projects</u>, so feel free to drop me a line if you want to hire me!</h4>
-                        <div class="contact-content">
-                            <form>
-                                <input disabled type="email" name="email" placeholder="Give me your email." />
-                                <textarea disabled name="message" placeholder="Tell me, I want to know everything."></textarea>
-                                <input disabled type="submit" value="Send message" />
-                            </form>
-                            <div>
-                                <p>Laborum et assumenda id aut ipsam et quibusdam. Sunt et ut nam aut natus suscipit voluptatem.<br />Porro adipisci dolorem eaque voluptates ut illo natus molestias.<br /><br />Aut magnam officia quia inventore exercitationem consequatur.</p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                @@include('sections/contact.html')
             </div>
         </main>
 
