@@ -18,9 +18,9 @@ main .article-container article {
     border: 0 solid #FFF;
 
     &#projects  { background-color: #F8F8F8; }
-    &#education { background-color: #E9E9E9; }
-    &#skills    { background-color: #E4E4E4; }
-    &#contact   { background-color: #F2F2F2; }
+    &#education { background-color: #FEFEFE; }
+    &#skills    { background-color: #F4F4F4; }
+    &#contact   { background-color: #F8F8F8; }
 
     &:hover h3::after {
         width: calc(100% - 3px);

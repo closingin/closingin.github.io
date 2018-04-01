@@ -1,5 +1,5 @@
 
-#contact .contact-content {
+#contact .content {
     display: flex;
     flex-direction: column;
 
@@ -52,7 +52,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-    #contact .contact-content {
+    #contact .content {
         flex-direction: row;
 
         form,

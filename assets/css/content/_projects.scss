@@ -1,0 +1,66 @@
+
+#projects .content {
+    display: flex;
+}
+
+#projects .project {
+    flex-shrink: 0;
+    width: 300px;
+    max-width: 100%;
+    overflow: hidden;
+    margin-right: 40px;
+    position: relative;
+    height: 450px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .background {
+        display: block;
+        position: absolute;
+        height: 100%;
+        filter: blur(1px);
+    }
+
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+    .description {
+        flex-grow: 0.0001;
+        position: relative;
+        max-height: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: rgba($primary-color, .7);
+        color: #fff;
+        transition: max-height .5s, flex-grow .5s;
+
+        h5 {
+            margin: 0 0 5px;
+            font-size: .9em;
+            line-height: 25px;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        p {
+            overflow: hidden;
+            line-height: 25px;
+            text-overflow: ellipsis;
+            transition: white-space .5s;
+        }
+    }
+
+    &:hover .description {
+        flex-grow: 1;
+        max-height: 100%;
+    }
+}
