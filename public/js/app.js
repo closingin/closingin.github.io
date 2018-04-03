@@ -2,19 +2,7 @@
 ** Written by closingin.
 */
 
-function blur(elements) {
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].classList.add('faded');
-    }
-}
-
-function unblur(elements) {
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].classList.remove('faded');
-    }
-}
-
-(function() {
+function displayContent() {
     var sidebar  = [
         document.querySelector('#description'),
         document.querySelector('#links')
@@ -30,6 +18,26 @@ function unblur(elements) {
         articles[i].style.opacity   = 1;
         articles[i].style.transform = 'translateY(0)';
     }
+}
+
+function handleNavigation() {
+    function displayMenu(menu, toggler, elements) {
+        menu.classList.add('active');
+        toggler.classList.add('active');
+
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.add('faded');
+        }
+    }
+
+    function hideMenu(menu, toggler, elements) {
+        menu.classList.remove('active');
+        toggler.classList.remove('active');
+
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].classList.remove('faded');
+        }
+    }
 
     var menu        = document.querySelector('header nav');
     var menuItems   = document.querySelectorAll('header nav a');
@@ -42,10 +50,7 @@ function unblur(elements) {
         menuItems[i].addEventListener('click', function(e) {
             e.preventDefault();
 
-            menu.classList.remove('active');
-            menuToggler.classList.remove('active');
-
-            unblur([aside, main]);
+            hideMenu(menu, menuToggler, [aside, main]);
 
             document.querySelector(e.target.hash).scrollIntoView({
                 behavior: 'smooth'
@@ -55,13 +60,58 @@ function unblur(elements) {
 
     menuToggler.addEventListener('click', function(e) {
         if (menu.classList.contains('active')) {
-            menu.classList.remove('active');
-            menuToggler.classList.remove('active');
-            unblur([aside, main]);
+            hideMenu(menu, menuToggler, [aside, main]);
         } else {
-            menu.classList.add('active');
-            menuToggler.classList.add('active');
-            blur([aside, main]);
+            displayMenu(menu, menuToggler, [aside, main]);
         }
     });
+}
+
+function handleSlideshow() {
+    var prev = document.querySelector('#prev');
+    var next = document.querySelector('#next');
+
+    var container    = document.querySelector('#projects .projects-container');
+    var firstProject = document.querySelector('#projects .projects-container .project:first-child');
+    var lastProject  = document.querySelector('#projects .projects-container .project:last-child');
+
+    var offset = firstProject.offsetWidth;
+
+    if (lastProject.offsetLeft + offset >= lastProject.offsetParent.offsetWidth) {
+        lastProject.offsetParent.classList.add('hidden-right');
+    }
+
+    prev.addEventListener('click', function(e) {
+        offset = firstProject.offsetWidth + 40;
+
+        if (firstProject.offsetLeft + offset == 0) {
+            firstProject.offsetParent.classList.remove('hidden-left');
+        }
+
+        if (lastProject.offsetLeft + (offset * 2) - 40 >= lastProject.offsetParent.offsetWidth) {
+            lastProject.offsetParent.classList.add('hidden-right');
+        }
+
+        container.style.marginLeft = ((parseInt(container.style.marginLeft) || 0) + offset) + 'px';
+    });
+
+    next.addEventListener('click', function(e) {
+        offset = firstProject.offsetWidth + 40;
+
+        if (firstProject.offsetLeft <= 0) {
+            firstProject.offsetParent.classList.add('hidden-left');
+        }
+
+        if (lastProject.offsetLeft - 40 <= lastProject.offsetParent.offsetWidth) {
+            lastProject.offsetParent.classList.remove('hidden-right');
+        }
+
+        container.style.marginLeft = ((parseInt(container.style.marginLeft) || 0) - offset) + 'px';
+    });
+}
+
+(function() {
+    displayContent();
+    handleNavigation();
+    handleSlideshow();
 })();

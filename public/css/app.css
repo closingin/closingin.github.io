@@ -191,7 +191,6 @@ main .article-container {
 
 main .article-container article {
   width: 100%;
-  min-height: 500px;
   box-sizing: border-box;
   color: #454545;
   border: 0 solid #FFF; }
@@ -230,8 +229,49 @@ main .article-container article {
   main .article-container.single article h4 {
     max-width: calc(50% - 20px); } }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(359deg); } }
+
 #projects .content {
-  display: flex; }
+  position: relative;
+  overflow: hidden; }
+  #projects .content #prev,
+  #projects .content #next {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: calc(50% + 30px);
+    z-index: 2;
+    width: 0;
+    height: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(calc(-50% - 15px));
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: width .5s, max-height .5s; }
+  #projects .content #prev {
+    left: -40px; }
+    #projects .content #prev i {
+      padding-left: 50px; }
+  #projects .content #next {
+    right: -40px; }
+    #projects .content #next i {
+      padding-left: 15px; }
+  #projects .content.hidden-left #prev,
+  #projects .content.hidden-right #next {
+    width: 80px;
+    max-height: 80px; }
+
+#projects .projects-container {
+  display: flex;
+  width: 100%;
+  transition: margin-left .5s; }
 
 #projects .project {
   flex-shrink: 0;
@@ -239,32 +279,28 @@ main .article-container article {
   max-width: 100%;
   overflow: hidden;
   margin-right: 40px;
-  position: relative;
-  height: 450px;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column; }
+  position: relative; }
   #projects .project:last-child {
     margin-right: 0; }
   #projects .project .background {
     display: block;
-    position: absolute;
-    height: 100%;
+    width: 100%;
     filter: blur(1px); }
   #projects .project .overlay {
     position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3); }
   #projects .project .description {
-    flex-grow: 0.0001;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     max-height: 50%;
-    padding: 20px;
+    padding: 20px 20px 0;
     box-sizing: border-box;
     background-color: rgba(16, 144, 130, 0.7);
-    color: #fff;
-    transition: max-height .5s, flex-grow .5s; }
+    color: #fff; }
     #projects .project .description h5 {
       margin: 0 0 5px;
       font-size: .9em;
@@ -272,13 +308,74 @@ main .article-container article {
       white-space: nowrap;
       text-transform: uppercase; }
     #projects .project .description p {
+      padding-bottom: 20px;
       overflow: hidden;
       line-height: 25px;
       text-overflow: ellipsis;
       transition: white-space .5s; }
   #projects .project:hover .description {
-    flex-grow: 1;
-    max-height: 100%; }
+    top: 0;
+    max-height: 100%;
+    overflow-y: auto; }
+
+@media screen and (min-width: 1024px) {
+  #projects .content::before, #projects .content::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 30px;
+    bottom: 0px;
+    width: 0;
+    z-index: 1;
+    transition: width .5s; }
+  #projects .content::before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent); }
+  #projects .content::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent); }
+  #projects .content #prev,
+  #projects .content #next {
+    justify-content: center; }
+    #projects .content #prev i,
+    #projects .content #next i {
+      padding-left: 0; }
+    #projects .content #prev::before,
+    #projects .content #next::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px dotted #109082;
+      border-radius: 50%;
+      box-sizing: border-box;
+      animation: rotate 10s linear infinite;
+      animation-play-state: paused; }
+    #projects .content #prev:hover::before,
+    #projects .content #next:hover::before {
+      animation-play-state: running; }
+  #projects .content #prev {
+    left: 20px; }
+  #projects .content #next {
+    left: auto;
+    right: 20px; }
+  #projects .content.hidden-left::before, #projects .content.hidden-right::after {
+    width: 100px; }
+  #projects .content.hidden-left #prev,
+  #projects .content.hidden-right #next {
+    width: 50px;
+    max-height: 50px; } }
+
+@media screen and (min-width: 1280px) {
+  #projects .content #prev {
+    left: 30px; }
+  #projects .content #next {
+    right: 30px; }
+  #projects .content.hidden-left::before, #projects .content.hidden-right::after {
+    width: 150px; }
+  #projects .content.hidden-left #prev,
+  #projects .content.hidden-right #next {
+    width: 70px;
+    max-height: 70px; } }
 
 #education .diploma {
   position: relative;

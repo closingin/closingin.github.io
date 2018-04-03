@@ -1,6 +1,46 @@
 
+@keyframes rotate {
+    0%   { transform: rotate(0deg);   }
+    100% { transform: rotate(359deg); }
+}
+
 #projects .content {
+    position: relative;
+    overflow: hidden;
+
+    #prev,
+    #next {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: calc(50% + 30px);
+        z-index: 2;
+        width: 0;
+        height: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transform: translateY(calc(-50% - 15px));
+        border-radius: 50%;
+        color: #fff;
+        background-color: rgba(0, 0, 0, .6);
+        cursor: pointer;
+        transition: width .5s, max-height .5s;
+    }
+
+    #prev { left:  -40px; i { padding-left: 50px; } }
+    #next { right: -40px; i { padding-left: 15px; } }
+
+    &.hidden-left #prev,
+    &.hidden-right #next {
+        width: 80px;
+        max-height: 80px;
+    }
+}
+
+#projects .projects-container {
     display: flex;
+    width: 100%;
+    transition: margin-left .5s;
 }
 
 #projects .project {
@@ -10,10 +50,6 @@
     overflow: hidden;
     margin-right: 40px;
     position: relative;
-    height: 450px;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
 
     &:last-child {
         margin-right: 0;
@@ -21,27 +57,27 @@
 
     .background {
         display: block;
-        position: absolute;
-        height: 100%;
+        width: 100%;
         filter: blur(1px);
     }
 
     .overlay {
         position: absolute;
+        top: 0;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, .3);
     }
 
     .description {
-        flex-grow: 0.0001;
-        position: relative;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
         max-height: 50%;
-        padding: 20px;
+        padding: 20px 20px 0;
         box-sizing: border-box;
         background-color: rgba($primary-color, .7);
         color: #fff;
-        transition: max-height .5s, flex-grow .5s;
 
         h5 {
             margin: 0 0 5px;
@@ -52,6 +88,7 @@
         }
 
         p {
+            padding-bottom: 20px;
             overflow: hidden;
             line-height: 25px;
             text-overflow: ellipsis;
@@ -60,7 +97,90 @@
     }
 
     &:hover .description {
-        flex-grow: 1;
+        top: 0;
         max-height: 100%;
+        overflow-y: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #projects .content {
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 30px;
+            bottom: 0px;
+            width: 0;
+            z-index: 1;
+            transition: width .5s;
+        }
+
+        &::before {
+            background: linear-gradient(to right, rgba(0, 0, 0, .8), transparent);
+        }
+
+        &::after {
+            right: 0;
+            background: linear-gradient(to left, rgba(0, 0, 0, .8), transparent);
+        }
+
+        #prev,
+        #next {
+            justify-content: center;
+
+            i { padding-left: 0; }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 2px dotted $primary-color;
+                border-radius: 50%;
+                box-sizing: border-box;
+                animation: rotate 10s linear infinite;
+                animation-play-state: paused;
+            }
+
+            &:hover::before {
+                animation-play-state: running;
+            }
+        }
+
+        #prev {
+            left: 20px;
+        }
+
+        #next {
+            left: auto;
+            right: 20px;
+        }
+
+        &.hidden-left::before,
+        &.hidden-right::after { width: 100px; }
+
+        &.hidden-left #prev,
+        &.hidden-right #next {
+            width: 50px;
+            max-height: 50px;
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #projects .content {
+        #prev { left:  30px; }
+        #next { right: 30px; }
+
+        &.hidden-left::before,
+        &.hidden-right::after { width: 150px; }
+
+        &.hidden-left #prev,
+        &.hidden-right #next {
+            width: 70px;
+            max-height: 70px;
+        }
     }
 }
