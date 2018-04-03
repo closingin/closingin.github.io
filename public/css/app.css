@@ -277,7 +277,8 @@ main .article-container article {
 
 #projects .projects-container {
   display: flex;
-  width: 100%; }
+  width: 100%;
+  transition: margin-left .5s; }
 
 #projects .project {
   flex-shrink: 0;
@@ -369,8 +370,6 @@ main .article-container article {
   #projects .content.hidden-right #next {
     width: 50px;
     max-height: 50px; }
-  #projects .projects-container {
-    transition: margin-left .5s; }
   #projects .project {
     width: 300px; } }
 
