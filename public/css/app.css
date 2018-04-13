@@ -286,7 +286,8 @@ main .article-container article {
   max-width: 100%;
   overflow: hidden;
   margin-right: 40px;
-  position: relative; }
+  position: relative;
+  border-radius: 4px; }
   #projects .project:last-child {
     margin-right: 0; }
   #projects .project .background {
@@ -297,13 +298,14 @@ main .article-container article {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); }
+    background-color: rgba(0, 0, 0, 0.5); }
   #projects .project .description {
     position: absolute;
     bottom: 0;
     width: 100%;
-    max-height: 50%;
+    max-height: 100%;
     padding: 20px 20px 0;
+    overflow-y: auto;
     box-sizing: border-box;
     background-color: rgba(16, 144, 130, 0.7);
     color: #fff; }
@@ -319,10 +321,17 @@ main .article-container article {
       line-height: 25px;
       text-overflow: ellipsis;
       transition: white-space .5s; }
-  #projects .project:hover .description {
-    top: 0;
-    max-height: 100%;
-    overflow-y: auto; }
+    #projects .project .description p.links {
+      line-height: normal; }
+    #projects .project .description p.links a {
+      display: inline-block;
+      padding: 10px 15px;
+      color: #FFF;
+      background-color: #11C6B2;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase; }
 
 @media screen and (min-width: 1024px) {
   #projects .content::before, #projects .content::after {
@@ -476,6 +485,10 @@ main .article-container article {
     padding: 20px;
     background-color: #c2dad7;
     color: #607c79; }
+  #contact .content a {
+    color: #607c79; }
+    #contact .content a:hover {
+      text-decoration: underline; }
 
 @media screen and (min-width: 1280px) {
   #contact .content {

@@ -50,6 +50,7 @@
     overflow: hidden;
     margin-right: 40px;
     position: relative;
+    border-radius: 4px;
 
     &:last-child {
         margin-right: 0;
@@ -65,15 +66,16 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, .3);
+        background-color: rgba(0, 0, 0, .5);
     }
 
     .description {
         position: absolute;
         bottom: 0;
         width: 100%;
-        max-height: 50%;
+        max-height: 100%;
         padding: 20px 20px 0;
+        overflow-y: auto;
         box-sizing: border-box;
         background-color: rgba($primary-color, .7);
         color: #fff;
@@ -93,12 +95,21 @@
             text-overflow: ellipsis;
             transition: white-space .5s;
         }
-    }
 
-    &:hover .description {
-        top: 0;
-        max-height: 100%;
-        overflow-y: auto;
+        p.links {
+            line-height: normal;
+        }
+
+        p.links a {
+            display: inline-block;
+            padding: 10px 15px;
+            color: #FFF;
+            background-color: #11C6B2;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
     }
 }
 

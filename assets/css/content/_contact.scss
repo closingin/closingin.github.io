@@ -49,6 +49,14 @@
         background-color: #c2dad7;
         color: #607c79;
     }
+
+    a {
+        color: #607c79;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 @media screen and (min-width: 1280px) {

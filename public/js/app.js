@@ -20,6 +20,19 @@ function displayContent() {
     }
 }
 
+function displayPersonalInformation() {
+    var phone = '+33 6 78 82 38 95';
+    var email = 'closingin@pm.me';
+
+    var contact = document.querySelector('#contact .personal p');
+    var sidebar = document.querySelector('aside #links .email');
+
+    contact.innerHTML = contact.innerHTML.replace('__PHONE__', phone);
+    contact.innerHTML = contact.innerHTML.replace('__EMAIL__', email);
+
+    sidebar.setAttribute('href', 'mailto:' + email);
+}
+
 function handleNavigation() {
     function displayMenu(menu, toggler, elements) {
         menu.classList.add('active');
@@ -112,6 +125,7 @@ function handleSlideshow() {
 
 (function() {
     displayContent();
+    displayPersonalInformation();
     handleNavigation();
     handleSlideshow();
 })();
