@@ -1,0 +1,40 @@
+
+footer {
+    padding: 30px 40px;
+    background-color: #202020;
+
+    p {
+        color: #656565;
+        margin-bottom: 5px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        color: #A0A0A0;
+        cursor: pointer;
+
+        &:hover {
+            color: #FFF;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        margin-left: 50%;
+
+        p {
+            display: inline;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    footer {
+        margin-left: 30%;
+    }
+}

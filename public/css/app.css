@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url("/public/fonts/open-sans/OpenSans-Regular.ttf"); }
+
+@font-face {
+  font-family: 'Varela Round';
+  src: url("/public/fonts/varela-round/VarelaRound-Regular.ttf"); }
+
 header .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -110,6 +118,31 @@ header nav {
     left: -30%;
     width: 30%; } }
 
+footer {
+  padding: 30px 40px;
+  background-color: #202020; }
+  footer p {
+    color: #656565;
+    margin-bottom: 5px; }
+    footer p:last-child {
+      margin-bottom: 0; }
+  footer a {
+    color: #A0A0A0;
+    cursor: pointer; }
+    footer a:hover {
+      color: #FFF; }
+
+@media screen and (min-width: 768px) {
+  footer {
+    margin-left: 50%; }
+    footer p {
+      display: inline;
+      margin-bottom: 0; } }
+
+@media screen and (min-width: 1024px) {
+  footer {
+    margin-left: 30%; } }
+
 aside {
   display: flex;
   flex-direction: column;
@@ -144,8 +177,7 @@ aside {
     aside #description h1 {
       color: white;
       text-transform: uppercase;
-      font-size: 2em;
-      font-family: 'Varela Round'; }
+      font-size: 2em; }
     aside #description p {
       margin-bottom: 20px;
       color: rgba(255, 255, 255, 0.6); }
@@ -187,53 +219,53 @@ aside {
     aside::after {
       padding-bottom: 50px; } }
 
-main {
+.sections {
   position: relative;
   z-index: 2;
   width: 100%; }
 
-main .article-container {
+.sections section {
   display: flex;
   flex-direction: column; }
 
-main .article-container article {
+.sections section article {
   width: 100%;
   box-sizing: border-box;
   color: #454545;
   border: 0 solid #FFF; }
-  main .article-container article#projects {
+  .sections section article#projects {
     background-color: #F8F8F8; }
-  main .article-container article#education {
+  .sections section article#education {
     background-color: #FEFEFE; }
-  main .article-container article#skills {
+  .sections section article#skills {
     background-color: #F4F4F4; }
-  main .article-container article#contact {
+  .sections section article#contact {
     background-color: #F8F8F8; }
-  main .article-container article:hover h3::after {
+  .sections section article:hover h2::after {
     width: calc(100% - 3px); }
-  main .article-container article > div {
+  .sections section article > div {
     padding: 40px;
     opacity: 0;
     transition: opacity 1s, transform 1s;
     transform: translateY(-10%); }
-    main .article-container article > div .content {
+    .sections section article > div .content {
       padding-top: 30px; }
 
 @media screen and (min-width: 768px) {
-  main {
+  .sections {
     margin-left: 50%;
     width: 50%; } }
 
 @media screen and (min-width: 1024px) {
-  main {
+  .sections {
     margin-left: 30%;
     width: 70%; } }
 
 @media screen and (min-width: 1280px) {
-  main .article-container {
+  .sections section {
     flex-direction: row; }
-  main .article-container.single article h3,
-  main .article-container.single article h4 {
+  .sections section.single article h2,
+  .sections section.single article h3 {
     max-width: calc(50% - 20px); } }
 
 @keyframes rotate {
@@ -309,7 +341,7 @@ main .article-container article {
     box-sizing: border-box;
     background-color: rgba(16, 144, 130, 0.7);
     color: #fff; }
-    #projects .project .description h5 {
+    #projects .project .description h4 {
       margin: 0 0 5px;
       font-size: .9em;
       line-height: 25px;
@@ -482,9 +514,11 @@ main .article-container article {
     border-radius: 3px;
     margin-left: auto; }
   #contact .content p {
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     background-color: #c2dad7;
     color: #607c79; }
+    #contact .content p:last-child {
+      padding-bottom: 20px; }
   #contact .content a {
     color: #607c79; }
     #contact .content a:hover {
@@ -503,7 +537,7 @@ main .article-container article {
 
 html, body {
   margin: 0;
-  font-family: "Open Sans";
+  font-family: 'Open Sans', sans-serif;
   overflow-x: hidden; }
 
 p {
@@ -513,15 +547,15 @@ a {
   color: #000;
   text-decoration: none; }
 
-h1, h2, h3, h4 {
-  font-family: 'Varela Round';
+h1, h2, h3 {
+  font-family: 'Varela Round', sans-serif;
   font-weight: normal; }
 
-h3, h4 {
+h2, h3 {
   max-width: 100%;
   padding-bottom: 10px; }
 
-h3 {
+h2 {
   display: inline-block;
   margin: 0;
   transform: translateX(-2px);
@@ -529,7 +563,7 @@ h3 {
   font-size: 30px;
   color: #4d4d4d; }
 
-h3::after {
+h2::after {
   content: '';
   display: block;
   width: 40px;
@@ -539,15 +573,20 @@ h3::after {
   background-color: #109082;
   transition: width .3s; }
 
-h4 {
+h3 {
   margin: 0;
   color: #000;
   text-transform: uppercase;
   font-size: .8em; }
 
+.bold {
+  font-weight: bold; }
+
+.underlined {
+  text-decoration: underline; }
+
 @media screen and (min-width: 768px) {
-  aside,
-  main {
+  aside {
     transition: filter .5s; }
   aside.faded {
     filter: blur(5px); } }

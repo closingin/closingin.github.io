@@ -1,7 +1,9 @@
 
+@import 'core/fonts';
 @import 'core/variables';
 
-@import 'core/menu';
+@import 'core/header';
+@import 'core/footer';
 @import 'core/sidebar';
 
 @import 'content/index';
@@ -12,7 +14,7 @@
 
 html, body {
     margin: 0;
-    font-family: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;
 }
 
@@ -25,17 +27,17 @@ a {
     text-decoration: none;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Varela Round';
+h1, h2, h3 {
+    font-family: 'Varela Round', sans-serif;
     font-weight: normal;
 }
 
-h3, h4 {
+h2, h3 {
     max-width: 100%;
     padding-bottom: 10px;
 }
 
-h3 {
+h2 {
     display: inline-block;
     margin: 0;
     transform: translateX(-2px);
@@ -44,7 +46,7 @@ h3 {
     color: #4d4d4d;
 }
 
-h3::after {
+h2::after {
     content: '';
     display: block;
     width: 40px;
@@ -55,24 +57,27 @@ h3::after {
     transition: width .3s;
 }
 
-h4 {
+h3 {
     margin: 0;
     color: #000;
     text-transform: uppercase;
     font-size: .8em;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
 @media screen and (min-width: 768px) {
-    aside,
-    main {
+    aside {
         transition: filter .5s;
     }
 
     aside.faded {
         filter: blur(5px);
-    }
-
-    main.faded {
-        // filter: blur(2px);
     }
 }

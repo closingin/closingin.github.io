@@ -1,16 +1,16 @@
 
-main {
+.sections {
     position: relative;
     z-index: 2;
     width: 100%;
 }
 
-main .article-container {
+.sections section {
     display: flex;
     flex-direction: column;
 }
 
-main .article-container article {
+.sections section article {
     width: 100%;
     box-sizing: border-box;
     color: #454545;
@@ -21,7 +21,7 @@ main .article-container article {
     &#skills    { background-color: #F4F4F4; }
     &#contact   { background-color: #F8F8F8; }
 
-    &:hover h3::after {
+    &:hover h2::after {
         width: calc(100% - 3px);
     }
 
@@ -38,27 +38,27 @@ main .article-container article {
 }
 
 @media screen and (min-width: 768px) {
-    main {
+    .sections {
         margin-left: 50%;
         width: 50%;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    main {
+    .sections {
         margin-left: 30%;
         width: 70%;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    main .article-container {
+    .sections section {
         flex-direction: row;
     }
 
-    main .article-container.single article {
-        h3,
-        h4 {
+    .sections section.single article {
+        h2,
+        h3 {
             max-width: calc(50% - 20px);
         }
     }

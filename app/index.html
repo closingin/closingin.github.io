@@ -6,22 +6,27 @@
 
     <body>
         @@include('core/menu.html')
-        @@include('core/sidebar.html')
 
         <main>
-            <div class="article-container single">
-                @@include('sections/projects.html')
-            </div>
+            @@include('core/sidebar.html')
 
-            <div class="article-container">
-                @@include('sections/education.html')
-                @@include('sections/skills.html')
-            </div>
+            <div class="sections">
+                <section class="single">
+                    @@include('sections/projects.html')
+                </section>
 
-            <div class="article-container single">
-                @@include('sections/contact.html')
+                <section>
+                    @@include('sections/education.html')
+                    @@include('sections/skills.html')
+                </section>
+
+                <section class="single">
+                    @@include('sections/contact.html')
+                </section>
             </div>
         </main>
+
+        @@include('core/footer.html')
 
         <script src="/public/js/app.min.js"></script>
     </body>

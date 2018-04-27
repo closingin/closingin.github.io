@@ -123,9 +123,30 @@ function handleSlideshow() {
     });
 }
 
+function populateJokes() {
+    var jokes = document.querySelectorAll('.joke');
+
+    for (var i = 0; i < jokes.length; i++) {
+        if (jokes[i].classList.contains('joke-one')) {
+            jokes[i].addEventListener('click', function(e) {
+                open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+            });
+        }
+
+        if (jokes[i].classList.contains('joke-two')) {
+            jokes[i].addEventListener('click', function(e) {
+                open('https://loadingartist.com/comic/launch-time/', '_blank');
+            });
+        }
+    }
+}
+
 (function() {
     displayContent();
     displayPersonalInformation();
     handleNavigation();
     handleSlideshow();
+    populateJokes();
+
+    console.log(" ------------------------- \n( You just lost the game. )\n(                         )\n( Yek yek.                )\n -------------------------\n   o\n    o\n       .--.\n      |o_o |\n      |:_/ |\n     //   \\ \\\n    (|     | )\n   /'\\_   _/`\\\n   \\___)=(___/  closingin.");
 })();
