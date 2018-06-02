@@ -20,6 +20,18 @@ function displayContent() {
     }
 }
 
+function displaySkills() {
+    var bars = document.querySelectorAll('.progress');
+
+    setTimeout(function() {
+        for (var i = 0; i < bars.length; i++) {
+            bars[i].firstChild.style.width = bars[i].getAttribute('data-width') + '%';
+            bars[i].firstChild.style.padding = '3px 5px';
+            bars[i].firstChild.innerHTML   = bars[i].getAttribute('data-width') + '%';
+        }
+    }, 500);
+}
+
 function displayPersonalInformation() {
     var phone = '+33 6 78 82 38 95';
     var email = 'closingin@pm.me';
@@ -143,6 +155,7 @@ function populateJokes() {
 
 (function() {
     displayContent();
+    displaySkills();
     displayPersonalInformation();
     handleNavigation();
     handleSlideshow();

@@ -268,12 +268,6 @@ aside {
   .sections section.single article h3 {
     max-width: calc(50% - 20px); } }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(359deg); } }
-
 #projects .content {
   position: relative;
   overflow: hidden; }
@@ -366,65 +360,12 @@ aside {
       text-transform: uppercase; }
 
 @media screen and (min-width: 1024px) {
-  #projects .content::before, #projects .content::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 30px;
-    bottom: 0px;
-    width: 0;
-    z-index: 1;
-    transition: width .5s; }
-  #projects .content::before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent); }
-  #projects .content::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent); }
-  #projects .content #prev,
-  #projects .content #next {
-    justify-content: center; }
-    #projects .content #prev i,
-    #projects .content #next i {
-      padding-left: 0; }
-    #projects .content #prev::before,
-    #projects .content #next::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 2px dotted #109082;
-      border-radius: 50%;
-      box-sizing: border-box;
-      animation: rotate 10s linear infinite;
-      animation-play-state: paused; }
-    #projects .content #prev:hover::before,
-    #projects .content #next:hover::before {
-      animation-play-state: running; }
-  #projects .content #prev {
-    left: 20px; }
-  #projects .content #next {
-    left: auto;
-    right: 20px; }
-  #projects .content.hidden-left::before, #projects .content.hidden-right::after {
-    width: 100px; }
-  #projects .content.hidden-left #prev,
-  #projects .content.hidden-right #next {
-    width: 50px;
-    max-height: 50px; }
   #projects .project {
     width: 300px; } }
 
 @media screen and (min-width: 1280px) {
-  #projects .content #prev {
-    left: 30px; }
-  #projects .content #next {
-    right: 30px; }
   #projects .content.hidden-left::before, #projects .content.hidden-right::after {
-    width: 150px; }
-  #projects .content.hidden-left #prev,
-  #projects .content.hidden-right #next {
-    width: 70px;
-    max-height: 70px; } }
+    width: 150px; } }
 
 #education .diploma {
   position: relative;
@@ -477,6 +418,67 @@ aside {
       text-decoration: underline; }
   #education .diploma .comment {
     margin-top: 10px; }
+
+#skills .category {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  #skills .category:first-child {
+    margin-top: 0; }
+  #skills .category:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none; }
+
+#skills .skill {
+  flex-grow: 1;
+  width: 100%;
+  margin: 0 0 20px;
+  box-sizing: border-box; }
+  #skills .skill:last-child {
+    margin-bottom: 0; }
+  #skills .skill.max {
+    width: 100%; }
+  #skills .skill h5 {
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    font-size: 12px; }
+  #skills .skill .progress {
+    min-height: 24px;
+    overflow: hidden;
+    border-radius: 3px; }
+    #skills .skill .progress > div {
+      width: 0;
+      min-height: 100%;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      transition: width .3s; }
+  #skills .skill.accent-0 .progress {
+    background-color: #067267; }
+  #skills .skill.accent-0 .progress > div {
+    background-color: #2D978C; }
+  #skills .skill.accent-1 .progress {
+    background-color: #B77B0A; }
+  #skills .skill.accent-1 .progress > div {
+    background-color: #F3B748; }
+  #skills .skill.accent-2 .progress {
+    background-color: #B7530A; }
+  #skills .skill.accent-2 .progress > div {
+    background-color: #F39148; }
+  #skills .skill.accent-3 .progress {
+    background-color: #3B5FA2; }
+  #skills .skill.accent-3 .progress > div {
+    background-color: #5D7DB7; }
+
+@media screen and (min-width: 1280px) {
+  #skills .skill {
+    width: 50%; }
+    #skills .skill + .skill:not(.max) {
+      padding-left: 20px; } }
 
 #contact .content {
   display: flex;

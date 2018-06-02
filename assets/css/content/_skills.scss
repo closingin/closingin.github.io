@@ -1,0 +1,82 @@
+
+#skills .category {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+#skills .skill {
+    flex-grow: 1;
+    width: 100%;
+    margin: 0 0 20px;
+    box-sizing: border-box;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.max {
+        width: 100%;
+    }
+
+    h5 {
+        margin: 0 0 5px 0;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
+    .progress {
+        min-height: 24px;
+        overflow: hidden;
+        border-radius: 3px;
+
+        > div {
+            width: 0;
+            min-height: 100%;
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            transition: width .3s;
+        }
+    }
+
+    &.accent-0 {
+        .progress       { background-color: $accent-0-dark;  }
+        .progress > div { background-color: $accent-0-light; }
+    }
+    &.accent-1 {
+        .progress       { background-color: $accent-1-dark;  }
+        .progress > div { background-color: $accent-1-light; }
+    }
+    &.accent-2 {
+        .progress       { background-color: $accent-2-dark;  }
+        .progress > div { background-color: $accent-2-light; }
+    }
+    &.accent-3 {
+        .progress       { background-color: $accent-3-dark;  }
+        .progress > div { background-color: $accent-3-light; }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #skills .skill {
+        width: 50%;
+
+        & + .skill:not(.max) {
+            padding-left: 20px;
+        }
+    }
+}
