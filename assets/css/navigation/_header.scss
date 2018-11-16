@@ -142,13 +142,6 @@ header nav {
     header .menu-toggle {
         top: 40px;
         left: 40px;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    header .menu-toggle {
-        top: 80px;
-        left: 80px;
 
         &.active {
             left: calc(30% - 70px);
@@ -158,5 +151,12 @@ header nav {
     header nav {
         left: -30%;
         width: 30%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    header .menu-toggle {
+        top: 80px;
+        left: 80px;
     }
 }
