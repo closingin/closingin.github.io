@@ -1,83 +1,14 @@
 
 @import 'core/fonts';
 @import 'core/variables';
+@import 'core/normalize';
 
-@import 'core/header';
-@import 'core/footer';
-@import 'core/sidebar';
+@import 'navigation/header';
+@import 'navigation/footer';
+@import 'navigation/sidebar';
 
-@import 'content/index';
-@import 'content/_projects';
-@import 'content/_education';
-@import 'content/_skills';
-@import 'content/_contact';
-
-html, body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    overflow-x: hidden;
-}
-
-p {
-    margin: 0;
-}
-
-a {
-    color: #000;
-    text-decoration: none;
-}
-
-h1, h2, h3 {
-    font-family: 'Varela Round', sans-serif;
-    font-weight: normal;
-}
-
-h2, h3 {
-    max-width: 100%;
-    padding-bottom: 10px;
-}
-
-h2 {
-    display: inline-block;
-    margin: 0;
-    transform: translateX(-2px);
-    text-transform: uppercase;
-    font-size: 30px;
-    color: #4d4d4d;
-}
-
-h2::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 4px;
-    margin-left: 2px;
-    border-radius: 2px;
-    background-color: $primary-color;
-    transition: width .3s;
-}
-
-h3 {
-    margin: 0;
-    color: #000;
-    text-transform: uppercase;
-    font-size: .8em;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.underlined {
-    text-decoration: underline;
-}
-
-@media screen and (min-width: 768px) {
-    aside {
-        transition: filter .5s;
-    }
-
-    aside.faded {
-        filter: blur(5px);
-    }
-}
+@import 'content/structure';
+@import 'content/sections/projects';
+@import 'content/sections/education';
+@import 'content/sections/skills';
+@import 'content/sections/contact';
