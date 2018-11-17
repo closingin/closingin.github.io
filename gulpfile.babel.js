@@ -10,8 +10,7 @@ import runSequence  from 'run-sequence'
 
 const $     = plugins()
 const paths = {
-    app    : 'app/',
-    assets : 'assets/',
+    app    : 'src/',
     dest   : 'public/',
 }
 
@@ -26,10 +25,10 @@ gulp.task('serve', () => {
     runSequence('build:dev', 'build:dist')
 
     gulp.watch(paths.app + '**/*.html', ['html'])
-    gulp.watch(paths.assets + 'css/**/*.scss', () => { runSequence('styles', 'build:dist') })
-    gulp.watch(paths.assets + 'js/**/*.js', () => { runSequence('scripts', 'build:dist') })
-    gulp.watch(paths.assets + 'images/**/*', ['images'])
-    gulp.watch(paths.assets + 'libs/**/*', ['libs'])
+    gulp.watch(paths.app + 'css/**/*.scss', () => { runSequence('styles', 'build:dist') })
+    gulp.watch(paths.app + 'js/**/*.js', () => { runSequence('scripts', 'build:dist') })
+    gulp.watch(paths.app + 'images/**/*', ['images'])
+    gulp.watch(paths.app + 'libs/**/*', ['libs'])
 })
 
 gulp.task('html', () =>
@@ -40,30 +39,30 @@ gulp.task('html', () =>
 )
 
 gulp.task('styles', () =>
-    gulp.src(paths.assets + 'css/app.scss')
+    gulp.src(paths.app + 'css/app.scss')
         .pipe($.sass())
         .pipe(gulp.dest(paths.dest + 'css'))
 )
 
 gulp.task('scripts', () =>
-    gulp.src(paths.assets + 'js/**/*.js')
+    gulp.src(paths.app + 'js/**/*.js')
         .pipe(gulp.dest(paths.dest + 'js'))
 )
 
 gulp.task('images', () =>
-    gulp.src(paths.assets + 'images/**/*')
+    gulp.src(paths.app + 'images/**/*')
         .pipe(gulp.dest(paths.dest + 'images'))
         .pipe($.connect.reload())
 )
 
 gulp.task('libs', () =>
-    gulp.src(paths.assets + 'libs/**/**')
+    gulp.src(paths.app + 'libs/**/**')
         .pipe(gulp.dest(paths.dest + 'libs'))
         .pipe($.connect.reload())
 )
 
 gulp.task('fonts', () =>
-    gulp.src(paths.assets + 'fonts/*')
+    gulp.src(paths.app + 'fonts/*')
         .pipe(gulp.dest(paths.dest + 'fonts'))
 )
 
