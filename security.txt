@@ -1,6 +1,6 @@
-Contact: closingin@pm.me
+Contact: closingin@protonmail.com
 Contact: https://twitter.com/closingin_me
-Encryption:
+Encryption: https://keybase.io/closingin/pgp_keys.asc?fingerprint=0450e31ea1317c9009349d587b0c16baeda4b492
 Acknowledgements:
 Policy:
 Signature:
