@@ -150,6 +150,12 @@ function populateJokes() {
                 open('https://loadingartist.com/comic/launch-time/', '_blank')
             })
         }
+
+        if (jokes[i].classList.contains('joke-three')) {
+            jokes[i].addEventListener('click', function(e) {
+                open('https://www.instagram.com/p/B2Pa6Y0gN2_/', '_blank')
+            })
+        }
     }
 }
 
