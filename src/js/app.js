@@ -33,14 +33,8 @@ function displaySkills() {
 }
 
 function displayPersonalInformation() {
-    var phone = ['+33', '6', '78', '82', '38', '95']
-    var email = ['closingin', '@', 'protonmail.com']
-
-    var contact = document.querySelector('#contact .personal p')
+    var email = ['closingin', '@', 'pm.me']
     var sidebar = document.querySelector('aside #links .email')
-
-    contact.innerHTML = contact.innerHTML.replace('__PHONE__', phone.join(' '))
-    contact.innerHTML = contact.innerHTML.replace('__EMAIL__', email.join(''))
 
     sidebar.setAttribute('href', 'mailto:' + email.join(''))
 }
